@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cb6xeccoji75t"]
+
+[ext_resource type="Script" uid="uid://dof86qqpglnxa" path="res://scenes/test/level_1.gd" id="1_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://c5gqvwr3531hk" path="res://scenes/test/bg_level_1.tscn" id="1_rus8k"]
+[ext_resource type="PackedScene" uid="uid://dw5xxwnwiqxvl" path="res://scenes/test/player_1.tscn" id="2_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://bd35ndtv46c8w" path="res://scenes/test/gd_level_1.tscn" id="3_4nkto"]
+[ext_resource type="PackedScene" uid="uid://ck4ud6ix2gbeb" path="res://scenes/test/player_2.tscn" id="5_4nkto"]
+[ext_resource type="PackedScene" uid="uid://b7306qmymbwyt" path="res://scenes/test/p2_bullet.tscn" id="5_pa8r4"]
+[ext_resource type="Script" uid="uid://bflgdf5b3kuja" path="res://scenes/test/player_2.gd" id="6_fcfvj"]
+
+[node name="level_1" type="Node" unique_id=1528624447]
+script = ExtResource("1_5xbjy")
+
+[node name="Bg_level_1" parent="." unique_id=626508285 instance=ExtResource("1_rus8k")]
+
+[node name="Gd_level_1" parent="." unique_id=1448413349 instance=ExtResource("3_4nkto")]
+
+[node name="Gd_level_2" parent="." unique_id=102829740 instance=ExtResource("3_4nkto")]
+position = Vector2(1280, 0)
+
+[node name="Gd_level_3" parent="." unique_id=2020180135 instance=ExtResource("3_4nkto")]
+position = Vector2(960, 0)
+
+[node name="Gd_level_4" parent="." unique_id=416515209 instance=ExtResource("3_4nkto")]
+position = Vector2(640, 0)
+
+[node name="Gd_level_5" parent="." unique_id=69649264 instance=ExtResource("3_4nkto")]
+position = Vector2(321, 0)
+
+[node name="Gd_level_6" parent="." unique_id=164013647 instance=ExtResource("3_4nkto")]
+position = Vector2(321, 0)
+
+[node name="player_1" parent="." unique_id=2055407691 instance=ExtResource("2_5xbjy")]
+position = Vector2(17, 135)
+
+[node name="p2_bullet" parent="." unique_id=654499976 instance=ExtResource("5_pa8r4")]
+
+[node name="player_2" parent="." unique_id=1677846207 instance=ExtResource("5_4nkto")]
+position = Vector2(302, 13)
+script = ExtResource("6_fcfvj")
+p2_bullet = ExtResource("5_pa8r4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1072844324]
+position = Vector2(159, 94)

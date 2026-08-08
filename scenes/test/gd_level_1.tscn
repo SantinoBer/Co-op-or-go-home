@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bd35ndtv46c8w"]
+
+[ext_resource type="Texture2D" uid="uid://ndl2ly86eq30" path="res://assets/test/Assets Godot Runner/foreground.png" id="1_03nvy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b52nb"]
+size = Vector2(319, 30)
+
+[node name="Gd_level_1" type="StaticBody2D" unique_id=1448413349]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2134080737]
+texture_filter = 1
+position = Vector2(-1, 131)
+texture = ExtResource("1_03nvy")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=240977319]
+position = Vector2(160, 164)
+shape = SubResource("RectangleShape2D_b52nb")

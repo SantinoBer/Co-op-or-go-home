@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://b7306qmymbwyt"]
+
+[ext_resource type="Script" uid="uid://l21tfjfy6mcm" path="res://scenes/test/p_2_bullet.gd" id="1_dnr3a"]
+[ext_resource type="Texture2D" uid="uid://c6pwk8g2la540" path="res://assets/test/Assets Godot Runner/coffee.png" id="2_dnr3a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab03o"]
+atlas = ExtResource("2_dnr3a")
+region = Rect2(0, 0, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i1qv"]
+atlas = ExtResource("2_dnr3a")
+region = Rect2(17, 0, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7ohy"]
+atlas = ExtResource("2_dnr3a")
+region = Rect2(34, 0, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l7jx"]
+atlas = ExtResource("2_dnr3a")
+region = Rect2(51, 0, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t816i"]
+atlas = ExtResource("2_dnr3a")
+region = Rect2(68, 0, 17, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b52nb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab03o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4i1qv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7ohy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l7jx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t816i")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m2pct"]
+radius = 5.0
+height = 16.0
+
+[node name="p2_bullet" type="Area2D" unique_id=654499976]
+z_index = 1
+script = ExtResource("1_dnr3a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=109685295]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_b52nb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2075227529]
+shape = SubResource("CapsuleShape2D_m2pct")
