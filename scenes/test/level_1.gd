@@ -24,6 +24,6 @@ func new_game():
 func _process(delta: float) -> void:
 	speed = START_SPEED
 	
-	$player_1.position.x += speed
-	$player_2.position.x += speed
-	$Camera2D.position.x += speed
+	$player_1.position.x += speed 
+	$player_2.position.x += speed 
+	$Camera2D.position.x += speed 
