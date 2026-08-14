@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://hm54ba0d2uel"]
+
+[ext_resource type="Texture2D" uid="uid://b7dwnhmd5m8xb" path="res://assets/test/Assets Godot Runner/Rope.png" id="1_agida"]
+[ext_resource type="Script" uid="uid://vv53dtilxdkb" path="res://scripts/prototype_1/player_2.gd" id="1_jcqq0"]
+[ext_resource type="Texture2D" uid="uid://cwui7eut5hsat" path="res://assets/test/Assets Godot Runner/garra.png" id="2_jcqq0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b52nb"]
+size = Vector2(20, 28)
+
+[node name="Node2D" type="Node2D" unique_id=890087011]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=678502555]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(1, -25)
+texture = ExtResource("1_agida")
+region_enabled = true
+region_rect = Rect2(0, 0, 18, 18)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=872234774]
+script = ExtResource("1_jcqq0")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1629681552]
+texture = ExtResource("2_jcqq0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=202345702]
+shape = SubResource("RectangleShape2D_b52nb")

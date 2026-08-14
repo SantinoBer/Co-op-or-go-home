@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://dcjff8o6hsxll"]
+
+[ext_resource type="Script" uid="uid://du0u4iuq2fmd0" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://bvatt4v2682lq" path="res://assets/test/Assets Godot Runner/mockup.png" id="1_l6cm7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b52nb"]
+texture = ExtResource("1_l6cm7")
+modulate_color = Color(0.48178947, 0.48178947, 0.48178947, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
+bg_color = Color(0.95596343, 0.9559633, 0.95596343, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.33333334)
+shadow_size = 1
+shadow_offset = Vector2(0, 0.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.54098976, 0.540991, 0.54098946, 0.85882354)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.33333334)
+shadow_size = 1
+shadow_offset = Vector2(0, 0.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.59607846, 0.59607846, 0.59607846, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.33333334)
+shadow_size = 1
+shadow_offset = Vector2(0, 0.5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wu84c"]
+
+[node name="MainMenu" type="Control" unique_id=791616782]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="Panel" type="Panel" parent="." unique_id=642348149]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_b52nb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=774402345]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -16.0
+offset_right = 36.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1603380936]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=115927333]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
+text = "options"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=183416802]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
+text = "Exit"
+
+[node name="Label" type="Label" parent="." unique_id=1164943110]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -64.0
+offset_right = 70.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Co-op-or-go-home"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bc58l0ga4jrao"]
+
+[ext_resource type="Texture2D" uid="uid://nyjt82spmf21" path="res://assets/test/Obstacles/obs_2.png" id="1_vyw7w"]
+[ext_resource type="Texture2D" uid="uid://cbo8bbuavkoap" path="res://assets/test/Obstacles/enemigo.png" id="2_hycca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b52nb"]
+
+[node name="Obs_2" type="Area2D" unique_id=748468047]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=975759717]
+texture = ExtResource("1_vyw7w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1354970818]
+shape = SubResource("RectangleShape2D_b52nb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=529556737]
+position = Vector2(0, -18)
+texture = ExtResource("2_hycca")
+flip_h = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1564021475]
+position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_b52nb")

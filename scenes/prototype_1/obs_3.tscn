@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://pjojjujvncqh"]
+
+[ext_resource type="Texture2D" uid="uid://vs3mdwsmoyjv" path="res://assets/test/Obstacles/obs_3.png" id="1_6hped"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3vbt"]
+size = Vector2(18, 36)
+
+[node name="Obs_3" type="Area2D" unique_id=748468047]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=975759717]
+scale = Vector2(1, 2)
+texture = ExtResource("1_6hped")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1354970818]
+shape = SubResource("RectangleShape2D_g3vbt")

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cdqvbapsvskhn"]
+
+[ext_resource type="Texture2D" uid="uid://cbo8bbuavkoap" path="res://assets/test/Obstacles/enemigo.png" id="1_rb8uq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b52nb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rb8uq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Alien_suelo" type="Area2D" unique_id=1367053620]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=817031123]
+texture = ExtResource("1_rb8uq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=350998213]
+visible = false
+sprite_frames = SubResource("SpriteFrames_b52nb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=818651150]
+position = Vector2(1, -1)
+polygon = PackedVector2Array(4, -7, 4, 1, 9, -1, 14, -2, 14, 2, 9, 5, 4, 5, 4, 9, 14, 16, -15, 16, -11, 11, -3, 6, -5, -2, -5, -6, -1, -8, 2, -8)

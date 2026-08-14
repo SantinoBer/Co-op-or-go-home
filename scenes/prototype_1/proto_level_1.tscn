@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b5bgn3aw28go3"]
+
+[ext_resource type="PackedScene" uid="uid://c5gqvwr3531hk" path="res://scenes/test/bg_level_1.tscn" id="1_c1gfi"]
+[ext_resource type="Script" uid="uid://dv2c3duosmxfp" path="res://scripts/prototype_1/proto_level_1.gd" id="1_g3vbt"]
+[ext_resource type="PackedScene" uid="uid://bm3j7q1ofi4s2" path="res://scenes/prototype_1/player_1.tscn" id="3_x884u"]
+[ext_resource type="PackedScene" uid="uid://hm54ba0d2uel" path="res://scenes/prototype_1/player_2.tscn" id="4_b4jrf"]
+[ext_resource type="PackedScene" uid="uid://pudqiirqs0c3" path="res://scenes/prototype_1/gd_level_1.tscn" id="4_g3vbt"]
+
+[node name="ProtoLevel1" type="Node" unique_id=1310101132]
+script = ExtResource("1_g3vbt")
+
+[node name="Bg_level_1" parent="." unique_id=626508285 instance=ExtResource("1_c1gfi")]
+
+[node name="player_1" parent="." unique_id=2055407691 instance=ExtResource("3_x884u")]
+
+[node name="Gd_level_1" parent="." unique_id=1448413349 instance=ExtResource("4_g3vbt")]
+
+[node name="player_2" parent="." unique_id=890087011 instance=ExtResource("4_b4jrf")]
+position = Vector2(42, 25)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=476128815]
+position = Vector2(160, 90)

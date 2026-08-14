@@ -1,34 +1,34 @@
-[gd_scene format=3 uid="uid://dw5xxwnwiqxvl"]
+[gd_scene format=3 uid="uid://bm3j7q1ofi4s2"]
 
-[ext_resource type="Script" uid="uid://8ic4s58c8tfw" path="res://scenes/test/player_1.gd" id="1_gneq0"]
-[ext_resource type="Texture2D" uid="uid://dg6pui5kv3c6" path="res://assets/test/Assets Godot Runner/player.png" id="1_rfmnd"]
+[ext_resource type="Texture2D" uid="uid://dg6pui5kv3c6" path="res://assets/test/Assets Godot Runner/player.png" id="1_nllxx"]
+[ext_resource type="Script" uid="uid://bc4h7bhwtocoe" path="res://scripts/prototype_1/player_1.gd" id="1_s55yj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f2c3w"]
-atlas = ExtResource("1_rfmnd")
+atlas = ExtResource("1_nllxx")
 region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qgfdq"]
-atlas = ExtResource("1_rfmnd")
+atlas = ExtResource("1_nllxx")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cyakk"]
-atlas = ExtResource("1_rfmnd")
+atlas = ExtResource("1_nllxx")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7m5b5"]
-atlas = ExtResource("1_rfmnd")
+atlas = ExtResource("1_nllxx")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xfu11"]
-atlas = ExtResource("1_rfmnd")
+atlas = ExtResource("1_nllxx")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ngimn"]
-atlas = ExtResource("1_rfmnd")
+atlas = ExtResource("1_nllxx")
 region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wjnj"]
-atlas = ExtResource("1_rfmnd")
+atlas = ExtResource("1_nllxx")
 region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m2pct"]
@@ -73,19 +73,19 @@ size = Vector2(12, 9)
 
 [node name="player_1" type="CharacterBody2D" unique_id=2055407691]
 z_index = 1
-script = ExtResource("1_gneq0")
+script = ExtResource("1_s55yj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2014791472]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_m2pct")
 animation = &"runing"
 autoplay = "runing"
-frame_progress = 0.44948256
+frame_progress = 0.71762276
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=492934327]
+[node name="RunCol" type="CollisionShape2D" parent="." unique_id=492934327]
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_pb3um")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=417819486]
+[node name="DuckCol" type="CollisionShape2D" parent="." unique_id=417819486]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_l6nsn")
