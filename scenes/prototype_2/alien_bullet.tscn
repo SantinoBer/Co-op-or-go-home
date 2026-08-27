@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cgxdw2aygflx6"]
+
+[ext_resource type="Script" uid="uid://c5rpgo5wyo8mc" path="res://scenes/prototype_2/alien_bullet.gd" id="1_q3vgn"]
+[ext_resource type="Texture2D" uid="uid://c3kno7elj1wat" path="res://assets/test/Obstacles/disparo.png" id="2_v6bra"]
+
+[node name="AlienBullet" type="Area2D" unique_id=1433797224]
+script = ExtResource("1_q3vgn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=932286302]
+texture_filter = 1
+texture = ExtResource("2_v6bra")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=435261372]
+polygon = PackedVector2Array(-10, -5, -14, -3, -14, 0, -8, 1, 7, 1, 15, -1, 15, -2, 8, -5)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1597977415]

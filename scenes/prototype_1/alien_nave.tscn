@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bwe5jtohnxgem"]
+
+[ext_resource type="Script" uid="uid://d2o0n4h6f3dnf" path="res://scenes/prototype_1/alien_nave.gd" id="1_3tnd3"]
+[ext_resource type="PackedScene" uid="uid://dqtl6xiqbr47r" path="res://scenes/prototype_1/alien_bullet.tscn" id="2_8d37x"]
+[ext_resource type="Texture2D" uid="uid://4s1ny1u6iqqa" path="res://assets/test/Assets Godot Runner/naveememiga.png" id="2_divrj"]
+
+[node name="AlienNave" type="Area2D" unique_id=2104899635]
+script = ExtResource("1_3tnd3")
+bullet_scene = ExtResource("2_8d37x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1339240495]
+texture_filter = 1
+texture = ExtResource("2_divrj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1473943029]
+polygon = PackedVector2Array(2, -7, 0, -7, -1, -5.5, -2, -3, -5, -2, -9.5, 1, -10, 3, -10, 10, -3, 15, 4, 15, 6.3999996, 14, 10.5, 11, 12, 8, 12, 3.7999992, 9, 0, 4, -3)
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=522332845]
+wait_time = 1.5

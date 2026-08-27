@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dwj5txb2xnhtj"]
+
+[ext_resource type="Texture2D" uid="uid://c2oxjw0d6arts" path="res://assets/test/Assets Godot Runner/background.png" id="1_88612"]
+[ext_resource type="Texture2D" uid="uid://dvi5b4nhm5wk0" path="res://assets/test/Assets Godot Runner/middleground1.png" id="2_se34u"]
+[ext_resource type="Texture2D" uid="uid://b5q6fl4bmwxev" path="res://assets/test/Assets Godot Runner/middleground2.png" id="3_ffyn5"]
+
+[node name="Bg_level_1" type="ParallaxBackground" unique_id=626508285]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=402509049]
+texture_filter = 1
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer" unique_id=2143602713]
+texture_filter = 1
+texture = ExtResource("1_88612")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="." unique_id=1324719316]
+texture_filter = 1
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2" unique_id=171495767]
+texture_filter = 1
+texture = ExtResource("2_se34u")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="." unique_id=767479438]
+texture_filter = 1
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3" unique_id=200426638]
+texture_filter = 1
+texture = ExtResource("3_ffyn5")
+centered = false

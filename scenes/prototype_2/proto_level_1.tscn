@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ch4iqhnrkb0q6"]
+
+[ext_resource type="Script" uid="uid://dmk4k0ylv1y0k" path="res://scenes/prototype_2/proto_level_1.gd" id="1_6ey15"]
+[ext_resource type="PackedScene" uid="uid://dwj5txb2xnhtj" path="res://scenes/prototype_2/bg_level_1.tscn" id="2_6ey15"]
+[ext_resource type="PackedScene" uid="uid://cml5ln66h6rjc" path="res://scenes/prototype_2/player_1.tscn" id="3_h64pi"]
+[ext_resource type="PackedScene" uid="uid://be5qa2c47u6vc" path="res://scenes/prototype_2/player_2.tscn" id="4_xlsjx"]
+[ext_resource type="PackedScene" uid="uid://cx1jjgb5kklfr" path="res://scenes/prototype_2/ground.tscn" id="5_6ey15"]
+[ext_resource type="PackedScene" uid="uid://d04fa2vcitubj" path="res://scenes/prototype_2/heart_bar.tscn" id="6_h64pi"]
+[ext_resource type="Script" uid="uid://devvtlql5tjxp" path="res://scenes/prototype_2/heart_bar.gd" id="7_xlsjx"]
+[ext_resource type="PackedScene" uid="uid://duclud1xvs4qd" path="res://scenes/prototype_2/game_over.tscn" id="8_h64pi"]
+
+[node name="ProtoLevel1" type="Node" unique_id=1310101132]
+script = ExtResource("1_6ey15")
+obstacle_min_spawn_distance = 1500
+obstacle_max_spawn_distance = 1500
+
+[node name="Bg_level_1" parent="." unique_id=626508285 instance=ExtResource("2_6ey15")]
+
+[node name="player_1" parent="." unique_id=2055407691 instance=ExtResource("3_h64pi")]
+
+[node name="player_2" parent="." unique_id=890087011 instance=ExtResource("4_xlsjx")]
+position = Vector2(195, 26)
+
+[node name="Ground" parent="." unique_id=1366093060 instance=ExtResource("5_6ey15")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=476128815]
+position = Vector2(160, 90)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1014165751]
+
+[node name="HeartBar" parent="CanvasLayer" unique_id=1440138212 instance=ExtResource("6_h64pi")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = -32.0
+offset_right = 51.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("7_xlsjx")
+
+[node name="GameOver" parent="." unique_id=7969552 instance=ExtResource("8_h64pi")]
+process_mode = 2
+
+[node name="WinTimer" type="Timer" parent="." unique_id=605052165]
+wait_time = 10.0
+one_shot = true

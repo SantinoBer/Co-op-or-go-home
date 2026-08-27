@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://hm54ba0d2uel"]
+[gd_scene format=3 uid="uid://be5qa2c47u6vc"]
 
-[ext_resource type="Texture2D" uid="uid://b7dwnhmd5m8xb" path="res://assets/test/Assets Godot Runner/Rope.png" id="1_agida"]
-[ext_resource type="Script" uid="uid://vv53dtilxdkb" path="res://scenes/prototype_1/player_2.gd" id="1_jcqq0"]
-[ext_resource type="Texture2D" uid="uid://cwui7eut5hsat" path="res://assets/test/Assets Godot Runner/garra.png" id="2_jcqq0"]
+[ext_resource type="Texture2D" uid="uid://b7dwnhmd5m8xb" path="res://assets/test/Assets Godot Runner/Rope.png" id="1_ocj4w"]
+[ext_resource type="Script" uid="uid://ca6ietyh711cl" path="res://scenes/prototype_2/player_2.gd" id="2_ocj4w"]
+[ext_resource type="Texture2D" uid="uid://cwui7eut5hsat" path="res://assets/test/Assets Godot Runner/garra.png" id="3_0uofr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b52nb"]
 size = Vector2(20, 28)
@@ -13,15 +13,15 @@ size = Vector2(20, 28)
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1, -25)
-texture = ExtResource("1_agida")
+texture = ExtResource("1_ocj4w")
 region_enabled = true
 region_rect = Rect2(0, 0, 18, 18)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=872234774]
-script = ExtResource("1_jcqq0")
+script = ExtResource("2_ocj4w")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1629681552]
-texture = ExtResource("2_jcqq0")
+texture = ExtResource("3_0uofr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=202345702]
 shape = SubResource("RectangleShape2D_b52nb")
