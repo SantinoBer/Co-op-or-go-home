@@ -5,8 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bm3j7q1ofi4s2" path="res://scenes/prototype_1/player_1.tscn" id="3_x884u"]
 [ext_resource type="PackedScene" uid="uid://hm54ba0d2uel" path="res://scenes/prototype_1/player_2.tscn" id="4_b4jrf"]
 [ext_resource type="PackedScene" uid="uid://pudqiirqs0c3" path="res://scenes/prototype_1/gd_level_1.tscn" id="4_g3vbt"]
-[ext_resource type="PackedScene" uid="uid://ddx1rs8evqc45" path="res://scenes/prototype_1/heart_bar.tscn" id="6_h333b"]
-[ext_resource type="PackedScene" uid="uid://cw0a00t6r6h4f" path="res://scenes/prototype_1/game_over.tscn" id="7_piffd"]
+[ext_resource type="PackedScene" uid="uid://ddx1rs8evqc45" path="res://scripts/prototype_1/heart_bar.tscn" id="6_h333b"]
 
 [node name="ProtoLevel1" type="Node" unique_id=1310101132]
 script = ExtResource("1_g3vbt")
@@ -38,6 +37,3 @@ offset_right = 51.0
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 0
-
-[node name="GameOver" parent="." unique_id=7969552 instance=ExtResource("7_piffd")]
-process_mode = 2

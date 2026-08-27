@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ddx1rs8evqc45"]
+
+[ext_resource type="Script" uid="uid://dhg2rd5gep8dc" path="res://scripts/prototype_1/h_box_container.gd" id="1_k56k0"]
+[ext_resource type="Texture2D" uid="uid://c8rug5bjptomj" path="res://assets/test/Assets Godot Runner/fullheart.png" id="2_hhvxf"]
+
+[node name="HeartBar" type="HBoxContainer" unique_id=1440138212]
+offset_right = 102.0
+offset_bottom = 40.0
+theme_override_constants/separation = 3
+alignment = 1
+script = ExtResource("1_k56k0")
+
+[node name="1" type="TextureRect" parent="." unique_id=200210105]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_hhvxf")
+stretch_mode = 2
+
+[node name="2" type="TextureRect" parent="." unique_id=1466910485]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_hhvxf")
+stretch_mode = 2
+
+[node name="3" type="TextureRect" parent="." unique_id=1808714835]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_hhvxf")
+stretch_mode = 2

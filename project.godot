@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Co-op-or-go-home"
-run/main_scene="uid://b5bgn3aw28go3"
+run/main_scene="uid://dcjff8o6hsxll"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://assets/icon.svg"
 

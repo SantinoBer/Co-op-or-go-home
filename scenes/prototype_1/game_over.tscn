@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cw0a00t6r6h4f"]
+
+[node name="GameOver" type="CanvasLayer" unique_id=7969552]
+
+[node name="Label" type="Label" parent="." unique_id=1224523174]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -49.0
+offset_right = 39.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "You Died"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=664812308]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -11.0
+offset_right = 37.5
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Restart" type="Button" parent="VBoxContainer" unique_id=970575118]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "RESTART"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=315096555]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Options"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1696625123]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Exit"
