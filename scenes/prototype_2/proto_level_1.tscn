@@ -12,6 +12,8 @@
 
 [node name="ProtoLevel1" type="Node" unique_id=1310101132]
 script = ExtResource("1_6ey15")
+min_speed = 200.0
+max_speed = 300.0
 obstacle_min_spawn_distance = 1500
 obstacle_max_spawn_distance = 1500
 

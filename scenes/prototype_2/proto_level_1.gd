@@ -237,13 +237,11 @@ func generate_nave() -> void:
 		return
 
 	nave_instance = nave_scene.instantiate()
-	
 	nave_instance.position = Vector2(
-		-40,
+		-280,
 		randi_range(30,70)
 	)
 	add_child(nave_instance)
-
 	nave_instance.body_entered.connect(
 		hit_nave.bind(nave_instance)
 	)
@@ -338,7 +336,6 @@ func _process(delta: float) -> void:
 	if not is_instance_valid(nave_instance):
 		if distance_travelled >= next_ship_spawn_distance:
 			generate_nave()
-
 	# SUELO
 	$Ground/Parallax2D.scroll_offset.x -= speed * delta
 

@@ -15,10 +15,14 @@ func _on_start_pressed() -> void:
 func _on_settings_pressed() -> void:
 	$Settings.show()
 	$Panel.hide()
+	$VBoxContainer.hide()
+	$Label.hide()
 
 func _on_settings_back_pressed() -> void:
 	$Settings.hide()
 	$Panel.show()
+	$VBoxContainer.show()
+	$Label.show()
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
