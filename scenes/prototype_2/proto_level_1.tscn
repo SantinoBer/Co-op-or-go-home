@@ -15,6 +15,7 @@
 script = ExtResource("1_6ey15")
 min_speed = 200.0
 max_speed = 300.0
+max_speed_duration = 45.0
 obstacle_min_spawn_distance = 1500
 obstacle_max_spawn_distance = 2000
 
@@ -55,9 +56,5 @@ visible = false
 
 [node name="WinPanel" parent="." unique_id=1771234112 instance=ExtResource("10_c6pq0")]
 visible = false
-
-[node name="WinTimer" type="Timer" parent="." unique_id=605052165]
-wait_time = 70.0
-one_shot = true
 
 [connection signal="back_pressed" from="GameOver/Settings" to="GameOver" method="_on_settings_back_pressed"]

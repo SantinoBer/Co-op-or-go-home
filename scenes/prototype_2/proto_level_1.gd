@@ -19,6 +19,7 @@ var obstacles: Array = []
 @export_category("Victoria")
 @export var max_speed_duration: float = 10.0
 
+
 @export_category("Obstáculos")
 @export var obstacle_min_spawn_distance: int = 300
 @export var obstacle_max_spawn_distance: int = 500
@@ -55,32 +56,28 @@ var next_ship_spawn_distance: float = 0.0
 
 var game_running := true
 var max_health: int
+var win_timer: float = 0.0
 var acceleration_timer: float = 0.0
 var max_speed_reached := false
 
 func _ready() -> void:
 	max_health = $CanvasLayer/HeartBar.get_child_count()
 	ground_height = $Ground/StaticBody2D/CollisionShape2D.shape.size.y
-	
 	AudioManager.play_music(AudioManager.LEVEL_1_MUSIC)
-
 	$GameOver.get_node("Panel/VBoxContainer/Restart").pressed.connect(new_game)
-
-	$WinTimer.wait_time = max_speed_duration
-	$WinTimer.one_shot = true
-	$WinTimer.timeout.connect(win_game)
 
 	new_game()
 
 func new_game() -> void:
 	acceleration_timer = 0.0
+	win_timer = 0.0
 	max_speed_reached = false
 	speed = min_speed
 	distance_travelled = 0.0
+
 	
 	AudioManager.play_music(AudioManager.LEVEL_1_MUSIC)
 
-	$WinTimer.stop()
 	$WinPanel.hide()
 	
 	$player_1.position = PLAYER_1_START_POS
@@ -271,7 +268,6 @@ func hit_nave(body, nave) -> void:
 
 func game_over() -> void:
 	game_running = false
-	$WinTimer.stop()
 	get_tree().paused = true
 	$GameOver.show()
 
@@ -288,37 +284,36 @@ func clean_old_obstacles() -> void:
 
 func win_game() -> void:
 	game_running = false
-	$WinTimer.stop()
 	get_tree().paused = true
 	$WinPanel.show()
-	
 
 func _process(delta: float) -> void:
 	if not game_running:
 		return
-
 	# ACELERACIÓN
 	if not max_speed_reached:
-
 		acceleration_timer += delta
-
 		var progress: float = (
 			acceleration_timer
 			/ acceleration_duration
 		)
-
+		
 		progress = clamp(progress, 0.0, 1.0)
-
 		speed = lerp(
 			min_speed,
 			max_speed,
 			progress
 		)
-
+		
 		if progress >= 1.0:
 			speed = max_speed
 			max_speed_reached = true
-			$WinTimer.start()
+			
+	if max_speed_reached:
+		win_timer += delta
+		if win_timer >= max_speed_duration:
+			win_game()
+			return
 
 	# DISTANCIA VIRTUAL
 	distance_travelled += speed * delta

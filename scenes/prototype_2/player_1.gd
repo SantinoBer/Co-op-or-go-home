@@ -22,6 +22,6 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("ducking")
 		$RunCol.disabled = true
 	# If its not doing anything else
-	$AnimatedSprite2D.play("runing")
+	$AnimatedSprite2D.play("running")
 
 	move_and_slide()

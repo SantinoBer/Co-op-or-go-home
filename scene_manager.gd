@@ -12,10 +12,8 @@ func change_scene(path: String) -> void:
 	get_tree().change_scene_to_file(path)
 
 func go_back() -> void:
-	print("hola")
 	if scene_history.is_empty():
 		return
-	print("hola")
 	print(scene_history)
 	
 	var previous_scene: String = str(scene_history.pop_back())

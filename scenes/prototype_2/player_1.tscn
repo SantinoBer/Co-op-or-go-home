@@ -61,7 +61,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_3wjnj")
 }],
 "loop": 1,
-"name": &"runing",
+"name": &"running",
 "speed": 5.0
 }]
 
@@ -78,9 +78,8 @@ script = ExtResource("1_he06c")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2014791472]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_m2pct")
-animation = &"runing"
-autoplay = "runing"
-frame_progress = 0.71762276
+animation = &"running"
+autoplay = "running"
 
 [node name="RunCol" type="CollisionShape2D" parent="." unique_id=492934327]
 position = Vector2(0, -2.5)

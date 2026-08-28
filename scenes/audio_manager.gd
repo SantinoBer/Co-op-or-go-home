@@ -2,8 +2,8 @@ extends Node
 
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
 
-const MENU_MUSIC = preload("res://audio/music/Go Home (Demo 1).wav")
-const LEVEL_1_MUSIC = preload("res://audio/music/Go Home (Final Demo).wav")
+const MENU_MUSIC = preload("res://audio/music/Go_Home_(Demo_1).wav")
+const LEVEL_1_MUSIC = preload("res://audio/music/Go_Home_(Final_Demo).wav")
 
 @export var menu_loop_delay: float = 2.0
 

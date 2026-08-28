@@ -2,13 +2,9 @@ extends CanvasLayer
 
 func _ready() -> void:
 	AudioManager.play_music(AudioManager.MENU_MUSIC)
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func _on_exit_pressed() -> void:
+	get_tree().paused = false
 	SceneManager.change_scene("res://scenes/main_menu.tscn")
 
 func _on_restart_pressed() -> void:
