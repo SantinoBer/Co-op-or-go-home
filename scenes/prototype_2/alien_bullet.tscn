@@ -2,11 +2,19 @@
 
 [ext_resource type="Script" uid="uid://c5rpgo5wyo8mc" path="res://scenes/prototype_2/alien_bullet.gd" id="1_q3vgn"]
 [ext_resource type="Texture2D" uid="uid://c3kno7elj1wat" path="res://assets/test/Obstacles/disparo.png" id="2_v6bra"]
+[ext_resource type="AudioStream" uid="uid://bkwbfsumex2al" path="res://audio/sfx/laserGun__byHourofmidnight.wav" id="3_v6bra"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b52nb"]
+random_pitch = 1.0594631
+random_volume_offset_db = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("3_v6bra")
 
 [node name="AlienBullet" type="Area2D" unique_id=1433797224]
 script = ExtResource("1_q3vgn")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=932286302]
+z_index = -1
 texture_filter = 1
 texture = ExtResource("2_v6bra")
 
@@ -14,3 +22,9 @@ texture = ExtResource("2_v6bra")
 polygon = PackedVector2Array(-10, -5, -14, -3, -14, 0, -8, 1, 7, 1, 15, -1, 15, -2, 8, -5)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1597977415]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1208293131]
+stream = SubResource("AudioStreamRandomizer_b52nb")
+volume_db = 2.0
+autoplay = true
+bus = &"SFX"

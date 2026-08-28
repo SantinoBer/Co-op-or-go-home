@@ -3,13 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://b7dwnhmd5m8xb" path="res://assets/test/Assets Godot Runner/Rope.png" id="1_ocj4w"]
 [ext_resource type="Script" uid="uid://ca6ietyh711cl" path="res://scenes/prototype_2/player_2.gd" id="2_ocj4w"]
 [ext_resource type="Texture2D" uid="uid://cwui7eut5hsat" path="res://assets/test/Assets Godot Runner/garra.png" id="3_0uofr"]
+[ext_resource type="AudioStream" uid="uid://ca1ujldsk25mo" path="res://audio/sfx/armsMachine_basedOnSoundByGregBaumont.wav" id="4_nkqtb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b52nb"]
-size = Vector2(20, 28)
+size = Vector2(20, 25)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b52nb"]
+streams_count = 1
+stream_0/stream = ExtResource("4_nkqtb")
 
 [node name="Node2D" type="Node2D" unique_id=890087011]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=678502555]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=872234774]
+script = ExtResource("2_ocj4w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CharacterBody2D" unique_id=678502555]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(1, -25)
@@ -17,11 +25,14 @@ texture = ExtResource("1_ocj4w")
 region_enabled = true
 region_rect = Rect2(0, 0, 18, 18)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=872234774]
-script = ExtResource("2_ocj4w")
-
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1629681552]
 texture = ExtResource("3_0uofr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=202345702]
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_b52nb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1643205185]
+stream = SubResource("AudioStreamRandomizer_b52nb")
+volume_db = -5.0
+bus = &"SFX"

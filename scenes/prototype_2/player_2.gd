@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-@export var speed_y: float = 400.0
-@export var return_speed: float = 8.0
+@export var speed_y: float = 800.0
+@export var return_speed: float = 2.0
 
-@onready var rope: Sprite2D = $"../Sprite2D"
+@onready var rope: Sprite2D = $"Sprite2D2"
 
 var original_y: float
 var rope_start_y: float
@@ -11,7 +11,7 @@ var rope_start_y: float
 
 func _ready():
 	original_y = global_position.y
-	rope_start_y = rope.global_position.y
+	rope_start_y = rope.global_position.y - rope.texture.get_height()
 
 	# Activamos Region
 	rope.region_enabled = true
@@ -53,7 +53,7 @@ func update_rope():
 	rope_length = max(0.0, rope_length)
 
 	# Hacer que la textura se repita verticalmente
-	rope.region_rect.size.y = rope_length
+	rope.region_rect.size.y = rope_length - rope.texture.get_height()
 
 	# La soga queda centrada entre arriba y la garra
 	rope.global_position.y = rope_start_y + rope_length / 2

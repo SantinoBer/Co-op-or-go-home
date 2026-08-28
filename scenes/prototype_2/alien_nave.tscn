@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://byekkdct12354" path="res://scenes/prototype_2/alien_nave.gd" id="1_1264w"]
 [ext_resource type="PackedScene" uid="uid://cgxdw2aygflx6" path="res://scenes/prototype_2/alien_bullet.tscn" id="2_ftp1u"]
 [ext_resource type="Texture2D" uid="uid://4s1ny1u6iqqa" path="res://assets/test/Assets Godot Runner/naveememiga.png" id="3_d3h1p"]
+[ext_resource type="AudioStream" uid="uid://b31fm2vj3c16p" path="res://audio/sfx/retrospaceship_byniv_lyon3 (nave alien enemigo).wav" id="4_xrlrg"]
 
 [node name="AlienNave" type="Area2D" unique_id=2104899635]
 script = ExtResource("1_1264w")
@@ -18,5 +19,12 @@ polygon = PackedVector2Array(2, -7, 0, -7, -1, -5.5, -2, -3, -5, -2, -9.5, 1, -1
 [node name="ShootTimer" type="Timer" parent="." unique_id=522332845]
 wait_time = 1.5
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1682079149]
+stream = ExtResource("4_xrlrg")
+volume_db = -2.0
+pitch_scale = 1.45
+autoplay = true
+bus = &"SFX"
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://cxwmv2l7lox85"]
 
 [ext_resource type="Texture2D" uid="uid://vs3mdwsmoyjv" path="res://assets/test/Obstacles/obs_3.png" id="1_6hn0s"]
+[ext_resource type="AudioStream" uid="uid://bn6hbygyraaii" path="res://audio/sfx/SmashBigBox_bySrehpog.wav" id="2_42sos"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3vbt"]
 size = Vector2(18, 36)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b52nb"]
+random_pitch = 1.0779822
+random_volume_offset_db = 0.5
+streams_count = 1
+stream_0/stream = ExtResource("2_42sos")
 
 [node name="Obs_3" type="Area2D" unique_id=748468047]
 
@@ -13,3 +20,8 @@ texture = ExtResource("1_6hn0s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1354970818]
 shape = SubResource("RectangleShape2D_g3vbt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=3424521]
+stream = SubResource("AudioStreamRandomizer_b52nb")
+volume_db = -7.0
+bus = &"SFX"

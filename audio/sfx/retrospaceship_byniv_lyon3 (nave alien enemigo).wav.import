@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b31fm2vj3c16p"
+path="res://.godot/imported/retrospaceship_byniv_lyon3 (nave alien enemigo).wav-3896d5572cb0d735eed2b18e3f447463.sample"
+
+[deps]
+
+source_file="res://audio/sfx/retrospaceship_byniv_lyon3 (nave alien enemigo).wav"
+dest_files=["res://.godot/imported/retrospaceship_byniv_lyon3 (nave alien enemigo).wav-3896d5572cb0d735eed2b18e3f447463.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

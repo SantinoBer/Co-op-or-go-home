@@ -78,10 +78,11 @@ func new_game() -> void:
 	speed = min_speed
 	distance_travelled = 0.0
 	
-	AudioManager.restart_music()
+	AudioManager.play_music(AudioManager.LEVEL_1_MUSIC)
 
 	$WinTimer.stop()
-
+	$WinPanel.hide()
+	
 	$player_1.position = PLAYER_1_START_POS
 	$player_1.velocity = Vector2.ZERO
 
@@ -173,9 +174,17 @@ func hit_obs(body, obs) -> void:
 	if body.get_parent() != null:
 		if body.get_parent().name == "player_2":
 			if is_instance_valid(obs):
+				var die_sfx = obs.get_node("AudioStreamPlayer")
+				play_die_sfx(die_sfx)
+				
 				obs.queue_free()
 
 			obstacles.erase(obs)
+
+func play_die_sfx(die_sfx) -> void:
+	die_sfx.reparent(get_parent())
+	die_sfx.play()
+	die_sfx.finished.connect(die_sfx.queue_free)
 
 func damage_player(damage: int) -> void:
 	if not game_running:
@@ -218,7 +227,6 @@ func generate_alien() -> void:
 func hit_alien(body, alien) -> void:
 	if body.get_parent() != null:
 		if body.get_parent().name == "player_2":
-
 			if is_instance_valid(alien):
 				alien.queue_free()
 
@@ -279,13 +287,10 @@ func clean_old_obstacles() -> void:
 			obs.queue_free()
 
 func win_game() -> void:
-	if not game_running:
-		return
-
 	game_running = false
+	$WinTimer.stop()
 	get_tree().paused = true
-
-	print("¡GANASTE!")
+	$WinPanel.show()
 	
 
 func _process(delta: float) -> void:
@@ -338,15 +343,11 @@ func _process(delta: float) -> void:
 			generate_nave()
 	# SUELO
 	$Ground/Parallax2D.scroll_offset.x -= speed * delta
-
 	# FONDO LEJANO
 	$Bg_level_1/ParallaxLayer.motion_offset.x -= speed * 0.1 * delta
-
 	# FONDO MEDIO
 	$Bg_level_1/ParallaxLayer2.motion_offset.x -= speed * 0.3 * delta
-
 	# FONDO CERCANO
 	$Bg_level_1/ParallaxLayer3.motion_offset.x -= speed * 0.6 * delta
-
 	# LIMPIEZA
 	clean_old_obstacles()

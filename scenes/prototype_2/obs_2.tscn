@@ -2,8 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://nyjt82spmf21" path="res://assets/test/Obstacles/obs_2.png" id="1_231dq"]
 [ext_resource type="Texture2D" uid="uid://cbo8bbuavkoap" path="res://assets/test/Obstacles/enemigo.png" id="2_e3rdr"]
+[ext_resource type="AudioStream" uid="uid://ba1x250w880qj" path="res://audio/sfx/SmashMediumBox_bySrehpog.wav" id="3_e3rdr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b52nb"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dumi0"]
+random_pitch = 1.0779822
+random_volume_offset_db = 0.5
+streams_count = 1
+stream_0/stream = ExtResource("3_e3rdr")
 
 [node name="Obs_2" type="Area2D" unique_id=748468047]
 
@@ -21,3 +28,8 @@ flip_h = true
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1564021475]
 position = Vector2(0, -18)
 shape = SubResource("RectangleShape2D_b52nb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2010301284]
+stream = SubResource("AudioStreamRandomizer_dumi0")
+volume_db = -5.0
+bus = &"SFX"

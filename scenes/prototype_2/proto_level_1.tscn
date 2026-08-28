@@ -9,13 +9,16 @@
 [ext_resource type="Script" uid="uid://devvtlql5tjxp" path="res://scenes/prototype_2/heart_bar.gd" id="7_xlsjx"]
 [ext_resource type="PackedScene" uid="uid://duclud1xvs4qd" path="res://scenes/prototype_2/game_over.tscn" id="8_h64pi"]
 [ext_resource type="PackedScene" uid="uid://dec613dt1p4wk" path="res://scenes/settings.tscn" id="9_xlsjx"]
+[ext_resource type="PackedScene" uid="uid://dv7joykmjn2ky" path="res://scenes/prototype_2/win_panel.tscn" id="10_c6pq0"]
 
 [node name="ProtoLevel1" type="Node" unique_id=1310101132]
 script = ExtResource("1_6ey15")
 min_speed = 200.0
 max_speed = 300.0
+acceleration_duration = 1.0
+max_speed_duration = 0.0
 obstacle_min_spawn_distance = 1500
-obstacle_max_spawn_distance = 1500
+obstacle_max_spawn_distance = 2000
 
 [node name="Bg_level_1" parent="." unique_id=626508285 instance=ExtResource("2_6ey15")]
 
@@ -47,12 +50,16 @@ script = ExtResource("7_xlsjx")
 
 [node name="GameOver" parent="." unique_id=7969552 instance=ExtResource("8_h64pi")]
 process_mode = 2
+visible = false
 
 [node name="Settings" parent="GameOver" unique_id=1843825062 instance=ExtResource("9_xlsjx")]
 visible = false
 
+[node name="WinPanel" parent="." unique_id=1771234112 instance=ExtResource("10_c6pq0")]
+visible = false
+
 [node name="WinTimer" type="Timer" parent="." unique_id=605052165]
-wait_time = 10.0
+wait_time = 160.0
 one_shot = true
 
 [connection signal="back_pressed" from="GameOver/Settings" to="GameOver" method="_on_settings_back_pressed"]

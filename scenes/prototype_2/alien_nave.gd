@@ -24,7 +24,6 @@ var entering: bool = true
 
 func _ready() -> void:
 	start_y = global_position.y
-	shoot_timer.start()
 
 func _process(delta: float) -> void:
 	time += delta
@@ -36,6 +35,7 @@ func _process(delta: float) -> void:
 			global_position.x = left_limit
 			entering = false
 			direction = 1.0
+			shoot_timer.start()
 	else:
 		# MOVIMIENTO HORIZONTAL
 		global_position.x += speed * direction * delta
