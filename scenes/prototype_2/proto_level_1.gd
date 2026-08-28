@@ -61,8 +61,10 @@ var max_speed_reached := false
 func _ready() -> void:
 	max_health = $CanvasLayer/HeartBar.get_child_count()
 	ground_height = $Ground/StaticBody2D/CollisionShape2D.shape.size.y
+	
+	AudioManager.play_music(AudioManager.LEVEL_1_MUSIC)
 
-	$GameOver.get_node("VBoxContainer/Restart").pressed.connect(new_game)
+	$GameOver.get_node("Panel/VBoxContainer/Restart").pressed.connect(new_game)
 
 	$WinTimer.wait_time = max_speed_duration
 	$WinTimer.one_shot = true
@@ -75,6 +77,8 @@ func new_game() -> void:
 	max_speed_reached = false
 	speed = min_speed
 	distance_travelled = 0.0
+	
+	AudioManager.restart_music()
 
 	$WinTimer.stop()
 
@@ -284,6 +288,7 @@ func win_game() -> void:
 	get_tree().paused = true
 
 	print("¡GANASTE!")
+	
 
 func _process(delta: float) -> void:
 	if not game_running:

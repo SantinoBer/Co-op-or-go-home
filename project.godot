@@ -11,9 +11,18 @@ config_version=5
 [application]
 
 config/name="Co-op-or-go-home"
-run/main_scene="uid://ch4iqhnrkb0q6"
+run/main_scene="uid://dcjff8o6hsxll"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://assets/icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://bf350cobgjebk"
+
+[autoload]
+
+AudioManager="*uid://dfd30tob8pq7l"
+SceneManager="*uid://cdp4advee5qkp"
 
 [debug]
 

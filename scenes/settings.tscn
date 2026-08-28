@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://dec613dt1p4wk"]
+
+[ext_resource type="Script" uid="uid://d3hcxtbtlk3t5" path="res://scenes/settings.gd" id="1_5p8wc"]
+
+[node name="Settings" type="Control" unique_id=1843825062]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5p8wc")
+
+[node name="Panel" type="Panel" parent="." unique_id=833934380]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel" unique_id=1608941246]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_top = 13.0
+offset_right = 31.0
+offset_bottom = 36.0
+grow_horizontal = 2
+text = "Options"
+
+[node name="Back" type="Button" parent="Panel" unique_id=482695726]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4125
+anchor_top = 0.76111114
+anchor_right = 0.584375
+anchor_bottom = 0.93333334
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1147923688]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 106.0
+offset_top = -28.0
+offset_right = -108.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=633966014]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Master" type="Label" parent="Panel/HBoxContainer/VBoxContainer" unique_id=1986435443]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "master"
+
+[node name="Music" type="Label" parent="Panel/HBoxContainer/VBoxContainer" unique_id=1121164989]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "music"
+
+[node name="Sfx" type="Label" parent="Panel/HBoxContainer/VBoxContainer" unique_id=2124896623]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Sfx"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=287155853]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Master" type="HSlider" parent="Panel/HBoxContainer/VBoxContainer2" unique_id=1936496481]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+
+[node name="Music" type="HSlider" parent="Panel/HBoxContainer/VBoxContainer2" unique_id=546416884]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+
+[node name="Sfx" type="HSlider" parent="Panel/HBoxContainer/VBoxContainer2" unique_id=1112717000]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+
+[connection signal="pressed" from="Panel/Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="Panel/HBoxContainer/VBoxContainer2/Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="Panel/HBoxContainer/VBoxContainer2/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="Panel/HBoxContainer/VBoxContainer2/Sfx" to="." method="_on_sfx_value_changed"]

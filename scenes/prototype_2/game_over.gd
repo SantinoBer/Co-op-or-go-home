@@ -1,6 +1,5 @@
-extends Control
+extends CanvasLayer
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	AudioManager.play_music(AudioManager.MENU_MUSIC)
 	pass # Replace with function body.
@@ -9,8 +8,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_start_pressed() -> void:
-	SceneManager.change_scene("res://scenes/prototype_2/proto_level_1.tscn")
+func _on_exit_pressed() -> void:
+	get_tree().quit()
+
+func _on_restart_pressed() -> void:
+	pass
 
 func _on_settings_pressed() -> void:
 	$Settings.show()
@@ -19,6 +21,3 @@ func _on_settings_pressed() -> void:
 func _on_settings_back_pressed() -> void:
 	$Settings.hide()
 	$Panel.show()
-
-func _on_exit_pressed() -> void:
-	get_tree().quit()

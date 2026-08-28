@@ -53,5 +53,3 @@ func _on_shoot_timer_timeout() -> void:
 	
 	if bullet.has_method("set_direction"):
 		bullet.set_direction(Vector2.DOWN)
-
-	print("NAVE DISPARÓ")

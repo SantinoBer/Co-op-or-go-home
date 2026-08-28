@@ -1,46 +1,62 @@
 [gd_scene format=3 uid="uid://duclud1xvs4qd"]
 
-[node name="GameOver" type="CanvasLayer" unique_id=7969552]
+[ext_resource type="Script" uid="uid://c8c8e7dypx56" path="res://scenes/prototype_2/game_over.gd" id="1_lqngc"]
 
-[node name="Label" type="Label" parent="." unique_id=1224523174]
+[node name="GameOver" type="CanvasLayer" unique_id=7969552]
+script = ExtResource("1_lqngc")
+
+[node name="Panel" type="Panel" parent="." unique_id=105407938]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel" unique_id=1224523174]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -39.0
-offset_top = -49.0
+offset_top = -68.0
 offset_right = 39.0
-offset_bottom = -23.0
+offset_bottom = -42.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 18
 text = "You Died"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=664812308]
-anchors_preset = 8
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=664812308]
+layout_mode = 1
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 offset_left = -37.5
-offset_top = -11.0
+offset_top = -105.0
 offset_right = 37.5
-offset_bottom = 72.0
+offset_bottom = -22.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
-[node name="Restart" type="Button" parent="VBoxContainer" unique_id=970575118]
+[node name="Restart" type="Button" parent="Panel/VBoxContainer" unique_id=970575118]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "RESTART"
 
-[node name="Options" type="Button" parent="VBoxContainer" unique_id=315096555]
+[node name="Settings" type="Button" parent="Panel/VBoxContainer" unique_id=315096555]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
-text = "Options"
+text = "Settings"
 
-[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1696625123]
+[node name="Exit" type="Button" parent="Panel/VBoxContainer" unique_id=1696625123]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "Exit"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

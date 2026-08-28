@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://du0u4iuq2fmd0" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://bvatt4v2682lq" path="res://assets/test/Assets Godot Runner/mockup.png" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://dec613dt1p4wk" path="res://scenes/settings.tscn" id="3_bqqt6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b52nb"]
 texture = ExtResource("1_l6cm7")
@@ -98,7 +99,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_l6cm7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
-text = "options"
+text = "settings"
 
 [node name="Button3" type="Button" parent="VBoxContainer" unique_id=183416802]
 layout_mode = 2
@@ -129,6 +130,11 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Co-op-or-go-home"
 
+[node name="Settings" parent="." unique_id=1843825062 instance=ExtResource("3_bqqt6")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]
+[connection signal="back_pressed" from="Settings" to="." method="_on_settings_back_pressed"]
